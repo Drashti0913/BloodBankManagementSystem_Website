@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
+    <script>
+        function myfunc(){
+            var pass=document.getElementById('p');
+            var cpass=document.getElementById('c');
+            var submit=document.getElementById('reg');
+            if(pass!=cpass){
+                submit.setAttribute("action","");
+
+            }else{
+                submit.setAttribute("action","reg.php");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="cont">
+        <div class="form sign-in">
+            <h2>Log In</h2>
+            <form name="log" action="login.php" method="post">
+                <label for="log">
+                    <span>Email Address</span>
+                    <input type="email" name="Email">
+                </label>
+                <label for="log">
+                    <span>Password</span>
+                    <input type="password" name="Password">
+                </label>
+                <button class="submit" type="submit" value="submit">Log In</button>
+                <p class="forgot-pass">Forgot Password ?</p>
+               <a href="admin/admin.php"><p class="forgot-pass">Admin LogIn</p></a> 
+                
+            </form>
+        </div>
+
+        <div class="sub-cont">
+            <div class="img">
+                <div class="img-text m-up">
+                    <h2>New User?</h2>
+                    <p>Sign up here.</p>
+                </div>
+                <div class="img-text m-in">
+                    <h2>Already has an account?</h2>
+                    <p>Just sign in.</p>
+                </div>
+                <div class="img-btn">
+                    <span class="m-up">Sign Up</span>
+                    <span class="m-in">Log In</span>
+                </div>
+            </div>
+            <div class="form sign-up">
+                <h2>Sign Up</h2>
+                <form action="reg.php" method="post" name="reg" id="reg">
+                    <label for="reg">
+                        <span>Name</span>
+                        <input type="text" name="Name">
+                    </label>
+                    <label>
+                        <span>Email</span>
+                        <input type="email" name="Email">
+                    </label>
+                    <label>
+                        <span>Password</span>
+                        <input type="password" name="Password" id="p">
+                    </label>
+                    <label>
+                        <span>Confirm Password</span>
+                        <input type="password" name="CorrectPassword" id="c">
+                    </label>
+                    <button type="submit" class="submit" id="submit" onclick="myfunc()" value="submit">Sign Up Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
+
